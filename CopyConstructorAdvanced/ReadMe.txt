@@ -1,5 +1,5 @@
 ========================================================================
-    CONSOLE APPLICATION : CopyConstructorSimple Project Overview
+    CONSOLE APPLICATION : CopyConstructorAdvanced Project Overview
 ========================================================================
 ////////////////////////////////////////////////////////////////////////
 
@@ -13,21 +13,22 @@ Summary of files that this project consists of:
 
 SOURCE FILES:		----------------------------------------------------
 
-CopyConstructorSimple.cpp
+CopyConstructorAdvanced.cpp
     This is the main function source file.
 
-simple_copyable_class.h and simple_copyable_class.cpp
-	The class for which copy constructor is written.
+healthy_copy_class.h and healthy_copy_class.cpp
+	This class copies the data it contains correctly in its copy constructor.
+	Also most of more complex tests (like copy elision) are written for this class.
 
 AUTO GENERATED FILES:	------------------------------------------------
 
-CopyConstructorSimple.vcxproj
+CopyConstructorAdvanced.vcxproj
     This is the main project file for VC++ projects generated using an Application Wizard.
     It contains information about the version of Visual C++ that generated the file, and
     information about the platforms, configurations, and project features selected with the
     Application Wizard.
 
-CopyConstructorSimple.vcxproj.filters
+CopyConstructorAdvanced.vcxproj.filters
     This is the filters file for VC++ projects generated using an Application Wizard. 
     It contains information about the association between the files in your project 
     and the filters. This association is used in the IDE to show grouping of files with
@@ -39,7 +40,7 @@ Other standard files:
 
 StdAfx.h, StdAfx.cpp
     These files are used to build a precompiled header (PCH) file
-    named CopyConstructorSimple.pch and a precompiled types file named StdAfx.obj.
+    named CopyConstructorAdvanced.pch and a precompiled types file named StdAfx.obj.
 
 /////////////////////////////////////////////////////////////////////////////
 Other notes:
