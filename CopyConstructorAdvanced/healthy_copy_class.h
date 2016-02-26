@@ -1,3 +1,4 @@
+//The purpose of this class is to test when copy constructor is called. Also it's data_ values will be compared to faulty_copy_class.
 #pragma once
 #include <string>
 
@@ -19,6 +20,6 @@ public:
 	inline void set_data(int d) { data_ = d; }
 };
 
-void healthy_parameter_function(healthy_copy_class h);
+void healthy_parameter_function(healthy_copy_class);
 healthy_copy_class healthy_return_function();
 void run_healthy_copyable_class_tests();

@@ -27,6 +27,12 @@
     <ClInclude Include="healthy_copy_class.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="faulty_copy_class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -36,6 +42,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="healthy_copy_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="faulty_copy_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
