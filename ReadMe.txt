@@ -1,0 +1,1 @@
+This repository contains test cases about copy constructor (and soon move constructor) in c++.
