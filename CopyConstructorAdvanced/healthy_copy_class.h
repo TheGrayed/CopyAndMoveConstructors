@@ -1,6 +1,7 @@
 //The purpose of this class is to test when copy constructor is called. Also it's data_ values will be compared to faulty_copy_class.
 #pragma once
 #include <string>
+using namespace std;
 
 #define DEFAULT_HEALTHY_DATA 5
 
@@ -11,7 +12,7 @@ private:
 
 public:
 	static int constructor_counter_;
-	static std::string constructor_message_;
+	static string constructor_message_;
 
 	healthy_copy_class();
 	healthy_copy_class(const healthy_copy_class&);

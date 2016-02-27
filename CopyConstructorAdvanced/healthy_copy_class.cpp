@@ -6,7 +6,7 @@
 using namespace std;
 
 int healthy_copy_class::constructor_counter_ = 0;
-std::string healthy_copy_class::constructor_message_ = string("No message is set for healthy_copy_class yet.");
+string healthy_copy_class::constructor_message_ = string("No message is set for healthy_copy_class yet.");
 
 healthy_copy_class::healthy_copy_class()
 {
@@ -25,8 +25,8 @@ healthy_copy_class::healthy_copy_class(const healthy_copy_class& source)
 	//where simply copying pointers and references in the class isn't sufficient, and their actual data should be copied as well.
 	constructor_counter_++;
 	cout << endl << "healthy_copy_class constructor #" << constructor_counter_ << " : COPY constructor." << endl << "Message: " << constructor_message_ << endl
-		<< "data_: " << data_ << " => " << source.data_ << '\t' << "address of this: " << this << '\t' << "address of source: " << &source << endl;
-	data_ = source.data_;	
+		<< "data_: " << data_ << " => " << source.data_ << '\t' << "address of this: " << this << endl << "address of source: " << &source << endl;
+	data_ = source.data_;
 	//As seen in faulty_copy_class, without this line, data_ of the object whose constructor is called (probably parameter or value on the left side of assignment)
 	//is not assigned at all, and will have different value compared to source (probably arguement or value on the right side of assignment).
 }
@@ -83,7 +83,7 @@ void run_healthy_copyable_class_tests()
 	healthy_copy_class::constructor_message_ = "Assigning an already declared object (arguement_obj) to another already declared object (to_be_assigned_obj). (Never printed)";
 	//WILL NOT be printed therefor expect a messageless cin.get(). 
 	to_be_assigned_obj = argument_obj;
-	//In this case, copy constructor is not called since healthy_to_be_assigned has been declared before.
+	//In this case, copy constructor is not called since to_be_assigned_obj has been declared before.
 	//However this process can be customized by overloading assignment operator.
 	mark_test_case_end();
 #pragma endregion
@@ -111,7 +111,7 @@ void run_healthy_copyable_class_tests()
 	healthy_copy_class::constructor_message_ = "Passing a temporary object created by constructor as arguement. (Constructor #6: Parameterless)";		//WILL be printed. (But only ONCE.)
 	healthy_parameter_function(healthy_copy_class());
 	//Contrary to what was done at line 57 (Constructor #2), this line DOES NOT invoke a call to COPY constructor,
-	//but instead the PARAMETER of healthy_parameter_function IS CONSTRUCTED WITH PARAMETERLESS CONSTRUCTOR.
+	//but instead the PARAMETER of healthy_parameter_function IS CONSTRUCTED BY PARAMETERLESS CONSTRUCTOR.
 	//Please note that the address printed in parameterless constructor matches the address of the function's parameter.
 	//In other words the compiler's copy elision rules dictate that instead of creating an object then passing it to
 	//function by value which creates a second object, ONLY ONE object should be created.
@@ -128,7 +128,7 @@ void run_healthy_copyable_class_tests()
 	healthy_parameter_function(healthy_return_function());
 	//As a combination of 2 previous Copy Elision rules, again ONLY ONE object is created, instead of 3.
 	//(1 call inside the healthy_return_function for direct constructor call, 1 call for temporary object created 
-	//after returning from healthy_return_function and 1 call for healthy_parameter_function's parameter.
+	//after returning from healthy_return_function and 1 call for healthy_parameter_function's parameter_obj.
 	//Instead all 3 are reduced to 1 object and 1 parameterless constructor call)
 	mark_test_case_end();
 

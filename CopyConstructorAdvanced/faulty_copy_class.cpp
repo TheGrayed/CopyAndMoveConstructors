@@ -6,7 +6,7 @@
 using namespace std;
 
 int faulty_copy_class::constructor_counter_ = 0;
-std::string faulty_copy_class::constructor_message_ = string("No message is set for faulty_copy_class yet.");
+string faulty_copy_class::constructor_message_ = string("No message is set for faulty_copy_class yet.");
 
 faulty_copy_class::faulty_copy_class()
 {
@@ -20,7 +20,7 @@ faulty_copy_class::faulty_copy_class(const faulty_copy_class& source)
 {
 	constructor_counter_++;
 	cout << endl << "faulty_copy_class constructor #" << constructor_counter_ << " : COPY constructor." << endl << "Message: " << constructor_message_ << endl
-		<< "data_: " << data_ << " source.data_: " << source.data_ << '\t' << "address of this: " << this << '\t' << "address of source: " << &source << endl;
+		<< "data_: " << data_ << " source.data_: " << source.data_ << '\t' << "address of this: " << this << endl << "address of source: " << &source << endl;
 
 	//Contrary to healthy_copy_class, since data_ is not assigned here, a parameter of faulty_copy_class will not have the same data_ as the argument.
 	//The same thing can be said for all the cases in healthy_copy_class tests where copy constructor was called.
@@ -36,6 +36,7 @@ void faulty_parameter_function(faulty_copy_class parameter_obj)
 void run_faulty_copyable_class_tests()
 {
 	//Copy constructor for parameters
+
 	faulty_copy_class::constructor_message_ = "Declaring argument_obj without assignment. (Constructor #1: Parameterless)";		//WILL be printed.
 	faulty_copy_class argument_obj;
 	//Causes parameterless constructor to be called.
